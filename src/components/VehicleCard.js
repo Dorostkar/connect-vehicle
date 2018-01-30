@@ -19,7 +19,6 @@ class VehicleCard extends Component {
 
   render() {
     if (this.state.data) {
-      console.log('state', this.state);
       return (
         <div className="VehicleCard">
           <img className="image" src={this.props.media[0].url} />
