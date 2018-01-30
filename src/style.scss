@@ -1,5 +1,4 @@
-$bg-colour: #ccc;
-
-body {
-	background-color: $bg-colour;
-}
+@import 'sass/variables';
+@import 'sass/global';
+@import 'sass/components/vehicleCard';
+@import 'sass/components/vehicleList';

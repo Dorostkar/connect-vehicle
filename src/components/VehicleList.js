@@ -21,7 +21,13 @@ export default class VehicleList extends Component {
   render() {
     if (this.state.data) {
       console.log(this.state.data.vehicles);
-      return <div />;
+      return (
+        <div className="VehicleList">
+          {this.state.data.vehicles.map(vehicle => {
+            return <h1 key={vehicle.id}>{vehicle.id}</h1>;
+          })}
+        </div>
+      );
     }
 
     return <h1>Loading...</h1>;
