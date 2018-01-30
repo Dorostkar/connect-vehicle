@@ -22,14 +22,10 @@ class VehicleCard extends Component {
       console.log('state', this.state);
       return (
         <div className="VehicleCard">
-          <div className="image">
-            <img src={this.props.media[0].url} />
-          </div>
-          <div className="detail">
-            <h2 className="name"> {this.props.id}</h2>
-            <span className="price">From {this.state.price}</span>
-            <p className="description">{this.state.data.description}</p>
-          </div>
+          <img className="image" src={this.props.media[0].url} />
+          <h3 className="name"> {this.props.media[0].name}</h3>
+          <p className="price">From {this.state.data.price}</p>
+          <p className="description">{this.state.data.description}</p>
         </div>
       );
     }
