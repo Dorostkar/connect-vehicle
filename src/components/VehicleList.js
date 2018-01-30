@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { getData } from '../api';
 
+import VehicleCard from './VehicleCard';
 export default class VehicleList extends Component {
   constructor(props) {
     super(props);
@@ -20,11 +21,11 @@ export default class VehicleList extends Component {
 
   render() {
     if (this.state.data) {
-      console.log(this.state.data.vehicles);
+      //   console.log(this.state.data.vehicles);
       return (
         <div className="VehicleList">
           {this.state.data.vehicles.map(vehicle => {
-            return <h1 key={vehicle.id}>{vehicle.id}</h1>;
+            return <VehicleCard key={vehicle.id} {...vehicle} />;
           })}
         </div>
       );

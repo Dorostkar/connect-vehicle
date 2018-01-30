@@ -5,22 +5,24 @@ import axios from 'axios';
  **/
 
 export const getData = cb => {
-  //   const vehicles = new XMLHttpRequest();
-  //   vehicles.open('GET', 'http://localhost:9988/api/vehicle');
-
-  //   vehicles.onreadystatechange = function() {
-  //     if (vehicles.readyState === 4) {
-  //       if (vehicles.status === 200) {
-  //         cb(vehicles.responseText);
-  //       }
-  //     }
-  //   };
-
   axios
     .get('http://localhost:9988/api/vehicle')
     .then(response => {
       if (response.status === 200) {
-        console.log(response);
+        // console.log(response);
+        cb(response.data);
+      }
+    })
+    .catch(error => {
+      console.log(error);
+    });
+};
+export const getVehicle = (url, cb) => {
+  axios
+    .get(`http://localhost:9988${url}`)
+    .then(response => {
+      if (response.status === 200) {
+        // console.log('getVehicle', response.data);
         cb(response.data);
       }
     })
